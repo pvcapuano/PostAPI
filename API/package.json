@@ -1,5 +1,5 @@
 {
-  "name": "PostAPI",
+  "name": "postapi",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/pvcapuano/PostAPI.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,5 +18,8 @@
   "homepage": "https://github.com/pvcapuano/PostAPI#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
   }
 }
