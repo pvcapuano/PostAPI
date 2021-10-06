@@ -1,26 +1,25 @@
 {
-  "name": "postapi",
+  "name": "PostAPI",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.9"
+  },
+  "devDependencies": {},
   "scripts": {
-    "dev": "nodemon --watch src src/server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pvcapuano/PostAPI.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pvcapuano/PostAPI/issues"
   },
-  "homepage": "https://github.com/pvcapuano/PostAPI#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^6.0.9"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.13"
-  }
+  "homepage": "https://github.com/pvcapuano/PostAPI#readme"
 }
