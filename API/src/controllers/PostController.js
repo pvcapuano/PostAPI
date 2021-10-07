@@ -72,6 +72,6 @@ module.exports = {
     }catch(err) {
       response.status(400).json({error: err.message})
     }
-  }
+  },
 
 }
