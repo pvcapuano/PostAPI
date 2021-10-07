@@ -42,8 +42,8 @@ module.exports = {
       return response.status(400).json({error: "Você deve informar um novo título ou uma nova descrição."})
     }  
 
-    if(title) request.post.title = title
-    if(description) request.post.description = description
+    if(title) response.post.title = title
+    if(description) response.post.description = description
 
     try{
       await response.post.save()
@@ -51,6 +51,27 @@ module.exports = {
     } catch(err) {
       response.status(500).json({error: err.message})
     }  
+  },
+
+  async delete(request, response) {
+    try{
+      await response.post.remove()
+      return response.status(200).json({message: "Post deletado com sucesso." })
+    } catch (err) {
+      return response.status(500).json({error: err.message})
+    }
+  },
+
+  async updateLike(request, response) {
+    response.post.liked = !response.post.liked
+    try{
+      await response.post.save()
+      
+      return response.status(200).json({message: `Post ${response.post.liked} ? "liked" : "unliked" com sucesso.`})
+
+    }catch(err) {
+      response.status(400).json({error: err.message})
+    }
   }
 
 }
