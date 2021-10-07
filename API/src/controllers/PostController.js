@@ -11,7 +11,7 @@ module.exports = {
     } catch (err) {
       return response.status(500).json({error: err.message})
     }
-  }
+  },
 
   async store(request, response) {
     const { title, description } = request.body
@@ -33,5 +33,24 @@ module.exports = {
     } catch (err) {
       return response.status(400).json({error: err.message})
     }
+  },
+
+  async update(request, response) {
+    const { title, description } = request.body
+
+    if(!title && !description) {
+      return response.status(400).json({error: "Você deve informar um novo título ou uma nova descrição."})
+    }  
+
+    if(title) request.post.title = title
+    if(description) request.post.description = description
+
+    try{
+      await response.post.save()
+      return response.status(200).json({message: "Post atualizado com sucesso."})
+    } catch(err) {
+      response.status(500).json({error: err.message})
+    }  
   }
+
 }
